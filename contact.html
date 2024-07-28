@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .text-container {
+            background: rgba(0, 0, 16, 0.65);
+        }
+
+
+        /* Suggestions dropdown styling */
+        #suggestions {
+            position: absolute;
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            max-height: 300px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        #suggestions .suggestion-item {
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        #suggestions .suggestion-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        #suggestions img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        #overlay {
+            display: none;
+        }
+
+        #overlay.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header class="header sticky top-0 z-50 bg-white shadow-md flex items-center justify-between px-8 py-02">
+        <!-- logo -->
+        <h1 class="w-3/12">
+            <a href="home.html" class="flex items-center">
+                <h1 class="text-2xl font-bold text-blue-700">Travel Nest</h1>
+                <img src="2ecf7364cd78b7222311518159a72179-removebg-preview.png" width="50" height="50" alt="Travel Nest Logo" class="ml-2">
+            </a>
+        </h1>
+    
+        <!-- navigation -->
+        <nav class="nav font-semibold text-lg">
+            <ul class="flex items-center">
+                <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer active">
+                  <a href="home.html">Home</a>
+                </li>
+                <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+                  <a href="about.html">About us</a>
+                </li>
+                <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+                  <a href="contact.html">Contact us</a>
+                </li>
+                
+            </ul>
+        </nav>
+    
+        <!-- buttons --->
+        <div class="w-4/12 flex justify-end">
+            <div class="relative flex items-center bg-gray-300 py-2 px-4 rounded-full ml-auto">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </span>
+                <input id="search-input" class="outline-none w-full h-full px-2 rounded-lg" type="text" placeholder="Search" />
+                <button id="search-icon" class="bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg ml-2">Search</button>
+                <button id="reset-btn" class="bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg ml-2">Reset</button>
+                <div id="suggestions" class="absolute top-full mt-2 w-full bg-white shadow-lg rounded-md hidden"></div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="relative w-full bg-repeat bg-cover" style="background-image:url('https://wallpapercrafter.com/desktop1/506354-beach-indian-ocean-sand-sandy-beach-travel-holiday.jpg');">
+        <section class="text-container" id="contact">
+            <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+                <div class="mb-4">
+                    <div class="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
+                        <p class="text-base font-semibold uppercase tracking-wide text-blue-100">
+                            Contact
+                        </p>
+                        <h2
+                            class="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl">
+                            Get in Touch
+                        </h2>
+                        
+                    </div>
+                </div>
+                <div class="flex items-stretch justify-center">
+                    <div class="grid md:grid-cols-2">
+                        <div class="h-full pr-6">
+                            <p class="mt-3 mb-12 text-lg text-white">
+                                Feel free to contact us with any inquiries, feedback, or suggestions. We are always eager to hear from our travelers and improve our services.
+                            </p>
+                            <ul class="mb-6 md:mb-0">
+                                <li class="flex">
+                                    <div class="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="h-6 w-6">
+                                            <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                                            <path
+                                                d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-4 mb-4">
+                                        <h3 class="mb-2 text-lg font-extrabold leading-6 text-gray-900 dark:text-white">Our Address
+                                        </h3>
+                                        <p class="text-gray-200 font-semibold">1230 Maecenas Street Donec Road</p>
+                                        <p class="text-gray-200 font-semibold">New York, EEUU</p>
+                                    </div>
+                                </li>
+                                <li class="flex">
+                                    <div class="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="h-6 w-6">
+                                            <path
+                                                d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2">
+                                            </path>
+                                            <path d="M15 7a2 2 0 0 1 2 2"></path>
+                                            <path d="M15 3a6 6 0 0 1 6 6"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-4 mb-4">
+                                        <h3 class="mb-2 text-lg leading-6 text-gray-900 dark:text-white font-extrabold">Contact
+                                        </h3>
+                                        <p class="text-gray-200 font-semibold">Mobile: +1 (123) 456-7890</p>
+                                        <p class="text-gray-200 font-semibold">Mail: tailnext@gmail.com</p>
+                                    </div>
+                                </li>
+                                <li class="flex">
+                                    <div class="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="h-6 w-6">
+                                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                                            <path d="M12 7v5l3 3"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-4 mb-4">
+                                        <h3 class="mb-2 text-lg font-extrabold leading-6 text-gray-900 dark:text-white">Working
+                                            hours</h3>
+                                        <p class="text-gray-200 font-semibold">Monday - Friday: 08:00 - 17:00</p>
+                                        <p class="text-gray-200 font-semibold">Saturday &amp; Sunday: 08:00 - 12:00</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                        
+                        <div class="card h-fit max-w-6xl p-5 md:p-12" id="form">
+                            <h2 class="mb-4 text-2xl font-bold dark:text-white">Ready to Get Started?</h2>
+                            <form id="contactForm">
+                                <div class="mb-6">
+                                    <div class="mx-0 mb-1 sm:mb-4">
+                                        <div class="mx-0 mb-1 sm:mb-4">
+                                            <label for="name" class="pb-1 text-xs uppercase tracking-wider text-white">Name</label>
+                                            <input type="text" id="name" name="name" autocomplete="given-name" placeholder="Your name" class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-gray-200 font-semibold">
+                                        </div>
+                                        <div class="mx-0 mb-1 sm:mb-4">
+                                            <label for="email" class="pb-1 text-xs uppercase tracking-wider text-white">Email</label>
+                                            <input type="email" id="email" name="email" autocomplete="email" placeholder="Your email address" class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-gray-200 font-semibold">
+                                        </div>
+                                    </div>
+                                    <div class="mx-0 mb-1 sm:mb-4">
+                                        <label for="textarea" class="pb-1 text-xs uppercase tracking-wider text-white">Message</label>
+                                        <textarea id="textarea" name="textarea" cols="30" rows="5" placeholder="Write your message..." class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-gray-200 font-semibold"></textarea>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="w-full bg-blue-800 text-white px-6 py-3 font-xl rounded-md sm:mb-0">Send Message</button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    <div id="overlay" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-end pt-20 max-h-screen">
+        <div class="relative bg-white mr-16 p-4 rounded-lg max-w-lg w-full max-h-screen overlay-content flex flex-col">
+            <img id="detail-image" src="" alt="" class="w-full h-auto mb-2 rounded-lg">
+            <h3 id="detail-name" class="text-xl font-bold mb-2"></h3>
+            <p id="detail-description" class="mb-4"></p>
+            <button id="close-button" class="mt-auto px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700 self-end">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

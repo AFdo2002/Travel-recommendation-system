@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .text-container {
+            background: linear-gradient(to right,
+                    rgba(0, 0, 16, 0.79),
+                    rgba(0, 0, 16, 0.77),
+                    rgba(0, 0, 16, 0.75),
+                    rgba(0, 0, 16, 0.72),
+                    rgba(0, 0, 16, 0.70),
+                    rgba(0, 0, 16, 0));
+        }
+
+        .padding-controll {
+            padding-top: 0.06rem;
+            padding-bottom: 0.06rem;
+        }
+
+        /* Suggestions dropdown styling */
+        #suggestions {
+            position: absolute;
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            max-height: 300px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        #suggestions .suggestion-item {
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        #suggestions .suggestion-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        #suggestions img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        #overlay {
+            display: none;
+        }
+
+        #overlay.active {
+            display: flex;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- component -->
+<header class="header sticky top-0 z-50 bg-white shadow-md flex items-center justify-between px-8 py-02">
+    <!-- logo -->
+    <h1 class="w-3/12">
+        <a href="home.html" class="flex items-center">
+            <h1 class="text-2xl font-bold text-blue-700">Travel Nest</h1>
+            <img src="2ecf7364cd78b7222311518159a72179-removebg-preview.png" width="50" height="50" alt="Travel Nest Logo" class="ml-2">
+        </a>
+    </h1>
+
+    <!-- navigation -->
+    <nav class="nav font-semibold text-lg">
+        <ul class="flex items-center">
+            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer active">
+              <a href="home.html">Home</a>
+            </li>
+            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+              <a href="about.html">About us</a>
+            </li>
+            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+              <a href="contact.html">Contact us</a>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <!-- buttons --->
+    <div class="w-4/12 flex justify-end">
+        <div class="relative flex items-center bg-gray-300 py-2 px-4 rounded-full ml-auto">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </span>
+            <input id="search-input" class="outline-none w-full h-full px-2 rounded-lg" type="text" placeholder="Search" />
+            <button id="search-icon" class="bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg ml-2">Search</button>
+            <button id="reset-btn" class="bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg ml-2">Reset</button>
+            <div id="suggestions" class="absolute top-full mt-2 w-full bg-white shadow-lg rounded-md hidden"></div>
+        </div>
+    </div>
+</header>
+    
+    
+
+    <div class="relative w-full h-screen bg-no-repeat bg-cover" style="background-image:url('Boston-MA.jpg') ;">
+        <div class="w-1/3 absolute inset-0 flex flex-col items-start justify-center text-container">
+            <h1 class="text-white text-6xl font-bold ml-5 leading-normal">EXPLORE <br>DREAM <br>DESTINATION</h1>
+            <p class="text-white font-semibold ml-5 mt-5 leading-relaxed text-lg">Find your next adventure with our expert
+                 travel recommendations. From relaxing beach getaways to exciting city breaks, we’ve got you covere
+                 d. Dive into our guides to plan your perfect trip.</p>
+            <button
+                class="font-bold bg-yellow-400 p-3 rounded-lg ml-5 mt-6 text-lg hover:bg-yellow-500 hover:scale-105 hover:transition-transform">Book
+                Now</button>
+            <div class="flex flex-row space-x-8 mt-6 ml-5">
+                <a href="https://www.facebook.com/"><i
+                        class="fa-brands fa-facebook text-white text-3xl hover:scale-110 hover:transition-transform"></i></a>
+                <a href="https://www.youtube.com/"><i
+                        class="fa-brands fa-youtube text-white text-3xl hover:scale-110 hover:transition-transform"></i></a>
+                <a href="https://www.instagram.com/"><i
+                        class="fa-brands fa-instagram text-white text-3xl hover:scale-110 hover:transition-transform"></i></a>
+                <a href="https://x.com/"><i
+                        class="fa-brands fa-twitter text-white text-3xl hover:scale-110 hover:transition-transform"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-end pt-20 max-h-screen">
+        <div class="relative bg-white mr-16 p-4 rounded-lg max-w-lg w-full max-h-screen overlay-content flex flex-col">
+            <img id="detail-image" src="" alt="" class="w-full h-auto mb-2 rounded-lg">
+            <h3 id="detail-name" class="text-xl font-bold mb-2"></h3>
+            <p id="detail-description" class="mb-4"></p>
+            <button id="close-button" class="mt-auto px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700 self-end">Close</button>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+
+</html>
